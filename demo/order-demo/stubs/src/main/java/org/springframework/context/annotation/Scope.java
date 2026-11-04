@@ -1,0 +1,15 @@
+/* 【Demo 编译桩】替代 Spring 的 @Scope。真实工程里不需要。 */
+package org.springframework.context.annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+public @interface Scope {
+    String value() default "";
+
+    String scopeName() default "";
+}
